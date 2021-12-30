@@ -6,7 +6,7 @@ const Constraint = Matter.Constraint;
 var engine, world;
 var canvas;
 var player, playerBase;
-var playerArcher,playerArrow;
+var playerArcher,playerArrow = [];
 
 var angle;
 
@@ -23,7 +23,6 @@ function setup() {
   world = engine.world;
 
   angleMode(DEGREES);
-  angle = 15
 
   var options = {
     isStatic: true
@@ -35,8 +34,8 @@ function setup() {
   player = Bodies.rectangle(250, playerBase.position.y - 160, 50, 180, options);
   World.add(world,player)
 
-  playerArcher = new PlayerArcher(310,250,60,100);
-  playerArrow = new PlayerArrow(310,250,80,30)
+  playerArcher = new PlayerArcher(340,playerBase.position.y - 112,120,120);
+  //playerArrow = new PlayerArrow(310,250,80,30)
 }
 
 function draw() {
@@ -53,13 +52,13 @@ function draw() {
   text("EPIC ARCHERY", width / 2, 100);
 
   playerArcher.display();
-  playerArrow.display();
+  //playerArrow.display();
 }
 
-function keyReleased(){
-  if(keyCode === DOWN_ARROW) {
-    playerArrow.shoot();
-  }
-}
+//function keyReleased(){
+  //if(keyCode === DOWN_ARROW) {
+    //playerArrow.shoot();
+  //}
+//}
 
 
