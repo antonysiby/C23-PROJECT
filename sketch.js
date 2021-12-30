@@ -35,7 +35,6 @@ function setup() {
   World.add(world,player)
 
   playerArcher = new PlayerArcher(340,playerBase.position.y - 112,120,120);
-  //playerArrow = new PlayerArrow(310,250,80,30)
 }
 
 function draw() {
@@ -52,13 +51,6 @@ function draw() {
   text("EPIC ARCHERY", width / 2, 100);
 
   playerArcher.display();
-  //playerArrow.display();
 }
-
-//function keyReleased(){
-  //if(keyCode === DOWN_ARROW) {
-    //playerArrow.shoot();
-  //}
-//}
 
 
